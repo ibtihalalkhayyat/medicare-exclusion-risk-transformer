@@ -15,7 +15,6 @@ SPACE_COMMIT = "848236eed6da5aed4ac82b495c9a0dd23b41c2dd"
 
 # Source path, destination path, exact SHA-256 of bytes already audited locally.
 SPACE_FILES = {
-    "README.md": ("demo/README.md", "f54929750eec43becb9502e8a170c7db6e886a32980389ac6df09b8fbc21e17d"),
     "index.html": ("demo/index.html", "1b076039c5050be4691eb2498751d44d25aacf4b7927f879a1bf1c3740f98e26"),
     "data/scenarios.json": ("demo/data/scenarios.json", "cc65b9097a1b9fb5667dd17655001ed0fbd3b5910e6c3cbce550b580f467a78f"),
     "data/inference_grid.json": ("demo/data/inference_grid.json", "911c0278519464f744d48c48d62330c362606db29b1c26e33903c4fee2e9ba1d"),
