@@ -1,0 +1,23 @@
+# Private model artifacts and source datasets must never be committed
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*sequence_preprocessor.json
+*platt_2018_2020.json
+*PRIVATE*
+*private_model*
+*real_provider*
+*provider_level*
+*NPI*
+*.parquet
+*.env
+.env.*
+*.token
+*.key
+*.pem
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
