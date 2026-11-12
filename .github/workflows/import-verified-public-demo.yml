@@ -1,0 +1,39 @@
+name: Import verified public Hugging Face demo
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/import-verified-public-demo.yml"
+      - "scripts/sync_pinned_public_hf.py"
+      - "scripts/verify_public_release.py"
+      - "tests/test_public_release.py"
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Import SHA-pinned public demo bytes only
+        run: python scripts/sync_pinned_public_hf.py
+      - name: Verify counts, hashes and absence of private artifacts
+        run: |
+          python scripts/verify_public_release.py
+          python -m unittest discover -s tests -v
+      - name: Commit audited public demonstration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add demo/ schema.json PUBLIC_RELEASE_SHA256.json
+          if git diff --cached --quiet; then
+            echo "All audited public assets already current"
+          else
+            git commit -m "release: import 24 fictional cases and 504 pinned Stage22 outputs"
+            git push
+          fi
