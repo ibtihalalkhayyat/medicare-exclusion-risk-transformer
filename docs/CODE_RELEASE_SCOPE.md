@@ -16,6 +16,6 @@
 
 ## Status
 
-This first public commit is a documentation initialization. Additional previously verified demonstration source will be uploaded in a separately audited commit. Absence of files in the current commit is not evidence that the internal scientific process has not been performed.
+The Stage23-B release now includes the exact frozen inference source, public HTML demo, 24 fictional examples, 504 cached values, 140-input schema, SHA-256 manifest, and standard-library release tests. GitHub Actions successfully imported and checked the source-pinned public assets. This does not authorize a trained model weight release or claim independently reproducible training.
 
 No open-source code license has been assigned by the research owner.
