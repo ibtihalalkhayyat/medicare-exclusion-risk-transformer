@@ -1,0 +1,21 @@
+{
+  "release_kind": "precomputed_synthetic_inference_outputs_only",
+  "generated_utc": "2026-11-11T18:32:54.864274+00:00",
+  "research_checkpoint_sha256": "6f671f6c72445cdb06fbd7b580e99aa0dd4000d38fc8024c11b22b52e636d34d",
+  "research_inference_code_sha256": "60eb019ae5daba6a82bac60ec778555c66b8c016687971d2bcb574f342e15654",
+  "research_preprocessing_sha256": "b18637de8c41aa044ca4da5a92e2d9da1ec7b401178bddaef497d62577782343",
+  "research_platt_calibration_sha256": "7a44b21502e7b24ec309f6bfe937cd772b21e339628dc9344cdf7041d6f46568",
+  "synthetic_scenarios_sha256": "cc65b9097a1b9fb5667dd17655001ed0fbd3b5910e6c3cbce550b580f467a78f",
+  "synthetic_scenarios": 24,
+  "bounded_multiplier_values": 21,
+  "precomputed_outputs": 504,
+  "variable_scaled": "lag0..lag4_total_services",
+  "provider_type_handling": "Fictional category strings not found in frozen vocabulary were mapped to frozen __UNKNOWN__ embedding.",
+  "frozen_model_modified": false,
+  "new_training_or_calibration": false,
+  "real_cms_or_leie_rows_processed": false,
+  "final_2023_outcome_access": false,
+  "model_or_fitted_assets_exported_publicly": false,
+  "calibration_limit": "Probability-like model output on invented covariates is NOT a validated probability for synthetic profiles; predictions are not clinically, legally, or operationally actionable.",
+  "backend": "none_static_html"
+}

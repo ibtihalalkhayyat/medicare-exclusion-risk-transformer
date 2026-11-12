@@ -1,0 +1,18 @@
+{
+  "final_2023_outcomes_included": false,
+  "public_files_sha256": {
+    "demo/data/inference_grid.json": "911c0278519464f744d48c48d62330c362606db29b1c26e33903c4fee2e9ba1d",
+    "demo/data/model_output_provenance.json": "123d5db918cae225d3bc835c803d1948b2df66fd77b0fdaea9d374b05ff99abe",
+    "demo/data/scenarios.json": "cc65b9097a1b9fb5667dd17655001ed0fbd3b5910e6c3cbce550b580f467a78f",
+    "demo/data/synthetic_examples.csv": "18f093efb4c0845a60e7bc19b70625432517b46b345b79bb20edc0cb44c60425",
+    "demo/index.html": "1b076039c5050be4691eb2498751d44d25aacf4b7927f879a1bf1c3740f98e26",
+    "schema.json": "007e3317a6c47a2ab66e2ee52205cd1955893f7dd6301cc369d75ba110f5368e",
+    "src/frozen_stage8_inference.py": "60eb019ae5daba6a82bac60ec778555c66b8c016687971d2bcb574f342e15654"
+  },
+  "release_kind": "PUBLIC_SYNTHETIC_RESEARCH_SOURCE_ONLY",
+  "release_label": "Stage23-B pinned public demo and source",
+  "research_checkpoint_is_private": true,
+  "source_dataset_repo": "ibtihalalkhayyat/medicare-l5-synthetic-schema-demo",
+  "source_space_commit": "848236eed6da5aed4ac82b495c9a0dd23b41c2dd",
+  "source_space_repo": "ibtihalalkhayyat/medicare-exclusion-risk-synthetic-demo"
+}

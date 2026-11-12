@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1a2c">
+<title>Medicare Administrative Exclusion | Frozen Model Synthetic Results</title>
+<style>
+:root{color-scheme:dark;--bg:#091222;--card:#111f34;--line:#2d4260;--ink:#ecf4ff;--muted:#b3c5d7;--teal:#68dec7;--amber:#ffd78e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% 2%,#123954 0,transparent 53%),var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--teal)}main{max-width:1120px;margin:0 auto;padding:32px 22px 70px}header{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.mark{font-size:.82rem;font-weight:700;letter-spacing:.11em;color:var(--teal)}.small{font-size:.82rem;color:var(--muted)}h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.18;max-width:890px;margin:26px 0 15px}h2{font-size:1.17rem;margin:0 0 12px}p{margin:10px 0}.lead{color:var(--muted);max-width:930px}
+.warn{margin:22px 0 26px;padding:18px 20px;border:1px solid #65563a;background:#352b1c;border-radius:12px;color:#fff0d4}
+.layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:17px}.panel{background:linear-gradient(145deg,#13253c,#101d31);border:1px solid var(--line);padding:23px;border-radius:17px;box-shadow:0 8px 32px #0003}.stack{display:grid;gap:17px}
+label{font-size:.9rem;font-weight:600;display:block;margin:15px 0 6px}select,input[type=range]{width:100%}select{padding:12px 10px;color:var(--ink);background:#0c1b2b;border:1px solid #48617b;border-radius:9px}input[type=range]{accent-color:var(--teal)}output{font-variant-numeric:tabular-nums;color:var(--teal);font-weight:700}
+button{display:block;margin-top:17px;padding:11px 16px;border:1px solid #52c6b5;background:#0a3438;color:#a0ffe8;border-radius:8px;cursor:pointer;font:inherit}button:focus,select:focus,input:focus{outline:2px solid var(--teal);outline-offset:2px}
+.metric{font-size:clamp(2.0rem,5.5vw,3.6rem);line-height:1.2;color:var(--teal);font-weight:750;margin:13px 0;font-variant-numeric:tabular-nums}.tag{background:#12383b;border:1px solid #206b68;border-radius:100px;padding:5px 9px;font-size:.8rem;color:#9bffde}
+.mono{font-variant-numeric:tabular-nums;font-family:ui-monospace,Consolas,monospace}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;min-width:575px}th,td{padding:11px;border-bottom:1px solid var(--line);font-size:.9rem}th{font-weight:600;color:var(--muted)}td{font-variant-numeric:tabular-nums}
+.hint{color:var(--muted);font-size:.87rem;margin-top:12px}footer{margin-top:27px;color:var(--muted);font-size:.9rem}details{margin-top:12px}summary{cursor:pointer;color:var(--teal)}code{font-size:.82rem;white-space:normal;overflow-wrap:anywhere}
+.note-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 20px}.fact{background:#13253c;border:1px solid var(--line);border-radius:10px;padding:13px}.fact strong{display:block;font-size:1.1rem;color:var(--teal)}
+@media (max-width:800px){.layout{grid-template-columns:1fr}.panel{padding:20px}main{padding:16px 13px 48px}.note-grid{grid-template-columns:1fr}}
+</style></head>
+<body><main>
+<header><div class="mark">MEDICARE · TEMPORAL AI RESEARCH</div><div class="small">5-year input · 140 fields · frozen model · static hosting</div></header>
+<h1>Administrative Exclusion Risk Research<br><span style="color:var(--teal)">Frozen Transformer Results on Synthetic Inputs</span></h1>
+<p class="lead">Explore outputs actually calculated by the original frozen PyTorch Transformer and its Platt calibration — but only for 24 fictional records and 21 predefined settings. This free website serves <strong>cached results, not live inference</strong>.</p>
+<div class="warn" role="note"><strong>RESEARCH DEMONSTRATION — NOT REAL-WORLD RISK.</strong> Every input record is fictional. These calibrated model outputs do not establish fraud, guilt, or valid exclusion probabilities for synthetic profiles. Do not use this site to evaluate real providers, make payment decisions, or take enforcement action.</div>
+<div class="note-grid"><div class="fact"><strong>24</strong><span class="small">Fictional provider profiles</span></div><div class="fact"><strong>504</strong><span class="small">Precomputed model outputs</span></div><div class="fact"><strong>0</strong><span class="small">Private model files on this site</span></div></div>
+<div class="layout">
+ <section class="panel" aria-label="Synthetic input controls"><h2>Choose a fictional input</h2>
+  <label for="case">Synthetic case</label><select id="case" aria-label="Synthetic scenario" disabled><option>Loading scenarios…</option></select>
+  <label for="scale">Five-year total-services multiplier</label>
+  <input type="range" id="scale" min="0.5" max="1.5" step="0.05" value="1" aria-label="Total services scale"><div>× <output id="scaleOut" for="scale">1.00</output></div>
+  <button id="reset" type="button">Reset</button>
+  <p class="hint">Only five synthetic <code>total_services</code> fields change. All 21 multiplier settings were computed privately before publication. This is neither a causal test nor a request to a remote model.</p>
+ </section>
+ <div class="stack">
+  <section class="panel" aria-live="polite" aria-label="Precomputed frozen model output"><span class="tag">Frozen Transformer · precomputed output</span>
+   <div id="score" class="metric">—</div>
+   <p id="raw" class="mono small">Awaiting locally cached results.</p>
+   <p id="caption" class="hint">Loading fictional inputs and frozen-model output cache…</p>
+  </section>
+  <section class="panel"><h2>Five-year synthetic input preview</h2>
+   <div class="table-wrap"><table><thead><tr><th>Lag</th><th>Scaled total services</th><th>Fictional HCPCS classes</th><th>Fictional provider category</th></tr></thead><tbody id="steps"><tr><td colspan="4">Loading…</td></tr></tbody></table></div>
+   <details><summary>About the 140-input schema and the actual calculation</summary>
+    <p class="hint">The original model processes five annual positions (lag4 through lag0), with 27 numeric fields and one provider-type category at each position. Offline Python inference loaded the unchanged frozen checkpoint, fitted preprocessing, and Platt calibration. The website displays those outputs from a cached JSON file.</p>
+    <p id="schemaHint" class="hint"></p>
+    <p class="hint">All fictional provider-type strings are mapped to the frozen model's unknown-category embedding. Model outputs for invented rows are not scientifically validated event-risk estimates. The 2023 final-test outcomes remain sealed.</p>
+   </details>
+  </section>
+ </div>
+</div>
+<footer><p><strong>Scope:</strong> research ranking of future observed HHS-OIG administrative exclusion for human review, not a determination of fraud. The sealed 2023 test has a 2026 outcome window and is not included.</p>
+<p><a href="https://huggingface.co/datasets/ibtihalalkhayyat/medicare-l5-synthetic-schema-demo" target="_blank" rel="noopener noreferrer">Public fictional dataset</a> · <a href="https://huggingface.co/docs/hub/spaces-sdks-static" target="_blank" rel="noopener noreferrer">Static Space documentation</a></p>
+<p class="small">No accounts, raw provider data, private model artifacts, or inference API keys are used here.</p></footer>
+</main><script>
+'use strict';
+const $=id=>document.getElementById(id);
+let scenarios=[],grid=null,byCase=new Map();
+function addText(el,text){const c=document.createElement('td');c.textContent=String(text);el.appendChild(c)}
+function fail(message){$('caption').textContent='Unable to load verified synthetic inference cache: '+message;$('case').disabled=true;$('score').textContent='Unavailable';$('steps').replaceChildren()}
+function render(){
+ if(!grid)return;
+ const id=$('case').value,record=scenarios.find(x=>x.synthetic_case_id===id),entry=byCase.get(id);
+ if(!record||!entry)return fail('case not found');
+ const scale=Number($('scale').value),key=scale.toFixed(2),idx=grid.scale_values.indexOf(key);
+ if(!Number.isFinite(scale)||idx<0)return fail('multiplier not in frozen computation grid');
+ const p=entry.calibrated_outputs[idx];if(!Number.isFinite(p)||p<0||p>1)return fail('invalid precomputed model output');
+ $('scaleOut').textContent=key;
+ $('score').textContent=(p*100).toFixed(6)+'%';
+ $('raw').textContent='Calibrated model output (decimal): '+p.toPrecision(9);
+ $('caption').textContent=`${id} · precomputed original-model output for multiplier ×${key}. The output on invented inputs is NOT a validated event probability or a fraud score.`;
+ const body=$('steps');body.replaceChildren();
+ for(const lag of [4,3,2,1,0]){
+  const tr=document.createElement('tr');addText(tr,'lag'+lag);
+  addText(tr,(Number(record[`lag${lag}_total_services`])*scale).toFixed(2));
+  addText(tr,record[`lag${lag}_unique_hcpcs`]);
+  addText(tr,record[`lag${lag}_provider_type_mode`]);body.appendChild(tr);
+ }
+ $('schemaHint').textContent=`The current invented case has ${Object.keys(record).length-1} input fields. The original model weights remain private.`;
+}
+Promise.all([
+ fetch('./data/scenarios.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('fictional cases request failed');return r.json()}),
+ fetch('./data/inference_grid.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('precomputed inference request failed');return r.json()})
+]).then(([sc,gr])=>{
+ if(!Array.isArray(sc)||sc.length!==24||!sc.every(x=>Object.keys(x).length===141&&/^SYNTHETIC_\d{3}$/.test(x.synthetic_case_id)))throw Error('fictional case schema failed');
+ if(gr.format!=='frozen_transformer_offline_scores_on_synthetic_inputs_v1'||!Array.isArray(gr.scale_values)||gr.scale_values.length!==21||!Array.isArray(gr.cases)||gr.cases.length!==24)throw Error('inference cache format failed');
+ for(let i=0;i<21;i++)if(gr.scale_values[i]!==(.5+i*.05).toFixed(2))throw Error('unexpected inference multiplier grid');
+ const scids=new Set(sc.map(x=>x.synthetic_case_id));if(scids.size!==24)throw Error('duplicate case id');
+ for(const c of gr.cases){if(!scids.has(c.synthetic_case_id)||byCase.has(c.synthetic_case_id)||!Array.isArray(c.calibrated_outputs)||c.calibrated_outputs.length!==21||!c.calibrated_outputs.every(v=>typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=1))throw Error('invalid model cache');byCase.set(c.synthetic_case_id,c)}
+ scenarios=sc;grid=gr;const select=$('case');select.replaceChildren();
+ for(const r of scenarios){const op=document.createElement('option');op.value=r.synthetic_case_id;op.textContent=r.synthetic_case_id;select.appendChild(op)}
+ select.disabled=false;select.addEventListener('change',render);$('scale').addEventListener('input',render);$('reset').addEventListener('click',()=>{select.selectedIndex=0;$('scale').value='1';render()});render();
+}).catch(e=>fail(e.message));
+</script></body></html>
