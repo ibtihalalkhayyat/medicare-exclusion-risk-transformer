@@ -39,7 +39,7 @@ def download(url, max_bytes=250_000):
 def save_pinned(contents, destination, expected_sha):
     observed = digest(contents)
     if observed != expected_sha:
-        raise RuntimeError("Pinned SHA-256 mismatch for " + destination + ": " + observed)
+        raise RuntimeError("Pinned SHA-256 mismatch for " + destination + ": " + observed + " length=" + str(len(contents)) + " prefix=" + repr(contents[:120]))
     target = ROOT / destination
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_bytes(contents)
